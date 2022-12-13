@@ -52,11 +52,13 @@ path,i,svg{
     padding: 2rem;
     width: 80%;
     border-top-left-radius: 1rem;
-    pointer-events: none;
+    font-weight: bold;
+    color: black;
+    /* pointer-events: none; */
     border-top-right-radius: 1rem;
     /* we are adding an adjustment class */
-    transform: translateY(100px); 
-    opacity: 0;
+    /* transform: translateY(100px);  */
+    /* opacity: 0; */
     transition: all 0.5s ease-in-out;
 }
 .sliders.active{
@@ -73,9 +75,29 @@ path,i,svg{
     padding: 1rem;
     cursor: pointer;
     font-weight: bold;
-    background: white;
+    background: rgb(48, 48, 48);
+    color: white;
+    border-radius: 1rem;
     font-size: 1.2rem;
 }
+
+/* slider input */
+input[type="range"]{
+    -webkit-appearance: none;
+    margin: 1rem 0rem;
+    width: 100%;
+    position: relative;
+    border-radius: 1rem;
+    cursor: pointer;
+}
+input[type=range]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    border: 1px solid #000000;
+    height: 1.5rem;
+    width: 1.5rem;
+    border-radius: 50%;
+    background: #ffffff;
+  }
 
 .controls{
     display: flex;
