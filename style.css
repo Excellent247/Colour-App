@@ -1,133 +1,219 @@
-*{
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
 }
 html {
-    font-size: 62.5%;
+  font-size: 62.5%;
 }
 
-body{
-    font-family: 'Inter', sans-serif;
-    font-size: 1.5rem;
+body {
+  font-family: "Inter", sans-serif;
+  font-size: 1.5rem;
 }
 
-button{
-    font-family: 'Inter', sans-serif;
+button {
+  font-family: "Inter", sans-serif;
 }
 
-path,i,svg{
-    pointer-events: none;
+path,
+i,
+svg {
+  pointer-events: none;
 }
 
-.colors{
-    min-height: 80vh;
-    display: flex;
-    color: rgb(139, 137, 137);
+.colors {
+  min-height: 80vh;
+  display: flex;
+  color: rgb(139, 137, 137);
 }
 
-.color{
-    min-height: 80vh;
-    display: flex;
-    flex: 1;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-evenly;
-    position: relative;
-    overflow: hidden;
+.color {
+  min-height: 80vh;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  position: relative;
+  overflow: hidden;
 }
 
-.color h2{
-    font-size: 2.5rem;
-    cursor: pointer;
-    font-weight: bold;
+.color h2 {
+  font-size: 2.5rem;
+  cursor: pointer;
+  font-weight: bold;
 }
 
-.sliders{
-    display: flex;
-    flex-direction: column;
-    position: absolute;
-    bottom: 0;
-    background: rgb(255, 255, 255);
-    padding: 2rem;
-    width: 80%;
-    border-top-left-radius: 1rem;
-    font-weight: bold;
-    color: black;
-    /* pointer-events: none; */
-    border-top-right-radius: 1rem;
-    /* we are adding an adjustment class */
-    /* transform: translateY(100px);  */
-    /* opacity: 0; */
-    transition: all 0.5s ease-in-out;
+.sliders {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  bottom: 0;
+  background: rgb(255, 255, 255);
+  padding: 2rem;
+  width: 80%;
+  border-top-left-radius: 1rem;
+  font-weight: bold;
+  color: black;
+  /* pointer-events: none; */
+  border-top-right-radius: 1rem;
+  /* we are adding an adjustment class */
+  transform: translateY(100px);
+  opacity: 0;
+  transition: all 0.5s ease-in-out;
 }
-.sliders.active{
-    opacity: 1;
-    transform: translateY(0px);
-    pointer-events: all;
+.sliders.active {
+  opacity: 1;
+  transform: translateY(0px);
+  pointer-events: all;
 }
 
-.sliders button{
-    position: absolute;
-    top: 0;
-    right: 0;
-    border: none;
-    padding: 1rem;
-    cursor: pointer;
-    font-weight: bold;
-    background: rgb(48, 48, 48);
-    color: white;
-    border-radius: 1rem;
-    font-size: 1.2rem;
+.sliders button {
+  position: absolute;
+  top: 0;
+  right: 0;
+  border: none;
+  padding: 1rem;
+  cursor: pointer;
+  font-weight: bold;
+  background: rgb(48, 48, 48);
+  color: white;
+  border-radius: 1rem;
+  font-size: 1.2rem;
 }
 
 /* slider input */
-input[type="range"]{
-    -webkit-appearance: none;
-    margin: 1rem 0rem;
-    width: 100%;
-    position: relative;
-    border-radius: 1rem;
-    cursor: pointer;
+input[type="range"] {
+  -webkit-appearance: none;
+  margin: 1rem 0rem;
+  width: 100%;
+  position: relative;
+  border-radius: 1rem;
+  cursor: pointer;
 }
-input[type=range]::-webkit-slider-thumb {
-    -webkit-appearance: none;
-    border: 1px solid #000000;
-    height: 1.5rem;
-    width: 1.5rem;
-    border-radius: 50%;
-    background: #ffffff;
-  }
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  border: 1px solid #000000;
+  height: 1.5rem;
+  width: 1.5rem;
+  border-radius: 50%;
+  background: #ffffff;
+}
 
-.controls{
-    display: flex;
-    flex-direction: column;
+.controls {
+  display: flex;
+  flex-direction: column;
 }
-.controls button{
-    padding: 1rem;
-    border: none;
-    margin: 1rem 0rem;
-    border-radius: 1rem;
-    background: white;
-    font-size: 2.5rem;
+.controls button {
+  padding: 1rem;
+  border: none;
+  margin: 1rem 0rem;
+  border-radius: 1rem;
+  background: none;
+  font-size: 2.5rem;
+  cursor: pointer;
 }
 
 .panels {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  height: 20vh;
+  text-align: center;
+}
+.panels button {
+  padding: 1rem 2rem;
+  font-size: 2rem;
+  color: white;
+  background: rgb(1, 1, 56);
+  border-radius: 1rem;
+  cursor: pointer;
+}
+.panels p {
+  padding: 1rem;
+  font-size: 2rem;
+}
+
+.copy-container,
+.save-container,
+.library-container {
+  position: fixed;
+  top: 0%;
+  left: 0%;
+  background: rgba(0, 0, 0, 0.5);
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* transition:  1s ease; */
+  /* transform: translateY(-2rem); */
+  opacity: 0;
+  pointer-events: none;
+}
+.copy-popup,
+.save-popup,
+.library-popup {
+  background: white;
+  border-radius: 2rem;
+  min-width: 20%;
+  min-height: 20%;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-direction: column;
+  font-size: 2rem;
+}
+.copy-container.active ,
+.save-container.active,
+.library-container.active{
+  opacity: 1;
+  pointer-events: all;
+}
+
+.copy-popup.active, 
+.save-popup.active, 
+.library-popup.active {
+  transition: transform 0.5s ease;
+  transform: translateY(-5rem);
+}
+.save-name{
+    font-size: 1.5rem;
+    padding: 1rem;
+}
+
+.library-popup{
+    min-width: 40%;
+    padding: 1rem;
+    justify-content: flex-start;
+    overflow-y: scroll;
+    max-height: 50vh;
+}
+.custom-palette{
     display: flex;
     align-items: center;
     justify-content: space-evenly;
-    height: 20vh;
-    text-align: center;
+    width: 100%;
+    padding: 2rem;
 }
-.panels button{
-    padding: 1rem 2rem;
-    font-size: 2rem;
-    color: white;
-    background: rgb(1, 1, 56);
-    border-radius: 1rem;
-    cursor: pointer;
+.small-preview{
+    display: flex;
+    flex: 1;
 }
-.panels p{
+.custom-palette h4{
+    flex: 1;
+}
+.small-preview div{
+    height: 5rem;
+    flex: 1;
+}
+.pick-palette-btn{
+    min-height: 1rem;
     padding: 1rem;
-    font-size: 2rem;
+    font-weight: bold;
+    font-size: 1.5rem;
+    border: none;
+    background: none;
+    cursor: pointer;
 }
